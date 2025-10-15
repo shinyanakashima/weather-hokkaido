@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 // 北海道7都市（緯度経度で曖昧さ回避）
 const CITIES: { id: string; name: string; lat: number; lon: number }[] = [
