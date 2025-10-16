@@ -104,9 +104,9 @@ export default function App() {
 				<header className='mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between'>
 					<div>
 						<h1 className='text-2xl font-bold tracking-tight'>
-							北海道・主要7都市の現在天気
+							北海道・各地の現在天気
 						</h1>
-						<p className='text-sm text-slate-600'>OpenWeather Current Weather API</p>
+						<p className='text-sm text-slate-600'>IT事業部イノベーション課</p>
 					</div>
 
 					<div className='inline-flex overflow-hidden rounded-2xl border border-slate-200 shadow-sm'>
