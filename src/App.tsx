@@ -100,10 +100,10 @@ export default function App() {
 
 	return (
 		<div className='min-h-screen bg-slate-50 text-slate-900'>
-			<div className='mx-auto max-w-6xl px-4 py-6'>
+			<div className='mx-auto max-w-6xl px-4 py-6 portrait:mx-0 portrait:max-w-none portrait:w-screen portrait:px-6'>
 				<header className='mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between'>
 					<div>
-						<h1 className='text-2xl font-bold tracking-tight'>
+						<h1 className='text-2xl font-bold tracking-tight portrait:text-3xl'>
 							北海道・各地の現在天気
 						</h1>
 						<p className='text-sm text-slate-600'>IT事業部イノベーション課</p>
@@ -138,7 +138,7 @@ export default function App() {
 					</div>
 				)}
 
-				<ul className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+				<ul className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 portrait:grid-cols-2 portrait:gap-6'>
 					{CITIES.map((c) => {
 						const v = data[c.id];
 						const err = v instanceof Error ? v : null;
