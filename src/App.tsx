@@ -103,10 +103,12 @@ export default function App() {
 			<div className='mx-auto max-w-6xl px-4 py-6 portrait:mx-0 portrait:max-w-none portrait:w-screen portrait:px-6'>
 				<header className='mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between'>
 					<div>
-						<h1 className='text-2xl font-bold tracking-tight portrait:text-3xl'>
+						<h1 className='text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight portrait:text-3xl'>
 							北海道・各地の現在天気
 						</h1>
-						<p className='text-sm text-slate-600'>IT事業部イノベーション課</p>
+						<p className='text-sm md:text-base xl:text-lg text-slate-600'>
+							IT事業部イノベーション課
+						</p>
 					</div>
 
 					<div className='inline-flex overflow-hidden rounded-2xl border border-slate-200 shadow-sm'>
@@ -150,8 +152,10 @@ export default function App() {
 								className='rounded-2xl border border-slate-200 bg-white p-4 shadow-sm'>
 								<div className='flex items-start justify-between'>
 									<div>
-										<h2 className='text-lg font-semibold'>{c.name}</h2>
-										<p className='text-xs text-slate-500'>
+										<h2 className='text-lg md:text-xl xl:text-2xl font-semibold'>
+											{c.name}
+										</h2>
+										<p className='text-xs md:text-sm xl:text-base text-slate-500'>
 											{w ? toLocalString(w.dt, w.timezone) : "--"}
 										</p>
 									</div>
@@ -166,10 +170,12 @@ export default function App() {
 								</div>
 
 								{!w && !err && (
-									<p className='mt-4 text-sm text-slate-500'>取得中…</p>
+									<p className='mt-4 text-sm md:text-sm xl:text-base text-slate-500'>
+										取得中…
+									</p>
 								)}
 								{err && (
-									<p className='mt-4 text-sm text-red-600'>
+									<p className='mt-4 text-sm md:text-sm xl:text-base text-red-600'>
 										取得エラー: {String(err.message)}
 									</p>
 								)}
@@ -177,18 +183,18 @@ export default function App() {
 								{w && (
 									<div className='mt-4'>
 										<div className='flex items-baseline gap-2'>
-											<div className='text-4xl font-bold leading-none'>
+											<div className='text-4xl md:text-5xl xl:text-6xl font-bold leading-none'>
 												{Math.round(w.main.temp)}
-												<span className='ml-1 text-xl font-medium'>
+												<span className='ml-1 md:text-2xl xl:text-3xl text-xl font-medium'>
 													{tempUnit}
 												</span>
 											</div>
-											<div className='text-sm text-slate-600'>
+											<div className='text-sm md:text-base xl:text-lg text-slate-600'>
 												{w.weather[0].main}
 											</div>
 										</div>
 
-										<dl className='mt-3 grid grid-cols-2 gap-2 text-sm'>
+										<dl className='mt-3 grid grid-cols-2 gap-2 text-sm md:text-base'>
 											<div className='rounded-xl bg-slate-50 p-2'>
 												<dt className='text-slate-500'>体感</dt>
 												<dd className='font-medium'>
