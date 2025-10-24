@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* 10-foot UI: 物理サイズを確保するため rem を画面サイズで拡大 */
+@layer base {
+    html {
+        font-size: clamp(18px, 1.6vmin, 28px);
+    }
+
+    /* 4K/フルHDテレビ & 粗いポインタ を想定してもう一段大きく */
+    @media (min-width: 1600px) and (any-pointer: coarse) {
+        html {
+            font-size: clamp(20px, 1.8vmin, 32px);
+        }
+    }
+}

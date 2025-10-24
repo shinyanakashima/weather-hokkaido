@@ -42,7 +42,7 @@ function toLocalString(tsSec: number, tzSec: number) {
 }
 
 function iconUrl(code: string) {
-	return `https://openweathermap.org/img/wn/${code}@2x.png`;
+	return `https://openweathermap.org/img/wn/${code}@4x.png`;
 }
 
 async function fetchCityWeather(
@@ -100,7 +100,7 @@ export default function App() {
 
 	return (
 		<div className='min-h-screen bg-slate-50 text-slate-900'>
-			<div className='mx-auto max-w-6xl px-4 py-6 portrait:mx-0 portrait:max-w-none portrait:w-screen portrait:px-6'>
+			<div className='mx-auto max-w-6xl px-4 py-6 portrait:mx-0 portrait:max-w-none portrait:w-screen portrait:px-6 landscape:max-w-none landscape:max-w-none landscape:w-[calc(100vw-4rem)] landscape:px-8'>
 				<header className='mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between'>
 					<div>
 						<h1 className='text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight portrait:text-3xl'>
@@ -140,7 +140,7 @@ export default function App() {
 					</div>
 				)}
 
-				<ul className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 portrait:grid-cols-2 portrait:gap-6'>
+				<ul className='grid gap-6 landscape:[grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))]'>
 					{CITIES.map((c) => {
 						const v = data[c.id];
 						const err = v instanceof Error ? v : null;
