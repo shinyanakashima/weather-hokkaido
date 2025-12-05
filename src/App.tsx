@@ -140,7 +140,7 @@ export default function App() {
 					</div>
 				)}
 
-				<ul className='grid gap-6 landscape:[grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))] max-[1440px]:landscape:grid-cols-4 max-[1440px]:gap-3'>
+				<ul className='grid gap-6 landscape:[grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))] max-[1440px]:landscape:grid-cols-4 max-[1440px]:gap-3 max-[1440px]:text-[12px]'>
 					{CITIES.map((c) => {
 						const v = data[c.id];
 						const err = v instanceof Error ? v : null;
