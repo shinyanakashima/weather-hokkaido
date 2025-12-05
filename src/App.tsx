@@ -195,13 +195,13 @@ export default function App() {
 										</div>
 
 										<dl className='mt-3 grid grid-cols-2 gap-2 text-sm md:text-base max-[1440px]:mt-2 max-[1440px]:gap-1 max-[1440px]:text-xs'>
-											<div className='rounded-xl bg-slate-50 p-2'>
+											<div className='rounded-xl bg-slate-50 p-2 max-[1440px]:hidden'>
 												<dt className='text-slate-500'>体感</dt>
 												<dd className='font-medium'>
 													{Math.round(w.main.feels_like)} {tempUnit}
 												</dd>
 											</div>
-											<div className='rounded-xl bg-slate-50 p-2'>
+											<div className='rounded-xl bg-slate-50 p-2 max-[1440px]:hidden'>
 												<dt className='text-slate-500'>湿度</dt>
 												<dd className='font-medium'>{w.main.humidity}%</dd>
 											</div>
