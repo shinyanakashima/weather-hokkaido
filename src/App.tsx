@@ -205,13 +205,13 @@ export default function App() {
 												<dt className='text-slate-500'>湿度</dt>
 												<dd className='font-medium'>{w.main.humidity}%</dd>
 											</div>
-											<div className='rounded-xl bg-slate-50 p-2'>
+											<div className='rounded-xl bg-slate-50 p-2 max-[1440px]:p-1.5 max-[1440px]:hidden'>
 												<dt className='text-slate-500'>風速</dt>
 												<dd className='font-medium'>
 													{w.wind.speed} {windUnit}
 												</dd>
 											</div>
-											<div className='rounded-xl bg-slate-50 p-2'>
+											<div className='rounded-xl bg-slate-50 p-2 max-[1440px]:p-1.5 max-[1440px]:hidden'>
 												<dt className='text-slate-500'>気圧</dt>
 												<dd className='font-medium'>
 													{w.main.pressure} hPa
