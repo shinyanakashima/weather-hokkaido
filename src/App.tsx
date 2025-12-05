@@ -101,12 +101,12 @@ export default function App() {
 	return (
 		<div className='min-h-screen bg-slate-50 text-slate-900'>
 			<div className='mx-auto max-w-6xl px-4 py-6 portrait:mx-0 portrait:max-w-none portrait:w-screen portrait:px-6 landscape:max-w-none landscape:max-w-none landscape:w-[calc(100vw-4rem)] landscape:px-8'>
-				<header className='mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between'>
+				<header className='mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between max-[1440px]:mb-3 max-[1440px]:gap-2'>
 					<div>
-						<h1 className='text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight portrait:text-3xl'>
+						<h1 className='text-2xl md:text-3xl xl:text-4xl font-bold tracking-tight portrait:text-3xl max-[1440px]:text-xl'>
 							北海道・各地の現在天気
 						</h1>
-						<p className='text-sm md:text-base xl:text-lg text-slate-600'>
+						<p className='text-sm md:text-base xl:text-lg text-slate-600 max-[1440px]:text-xs'>
 							IT事業部イノベーション課
 						</p>
 					</div>
@@ -140,7 +140,7 @@ export default function App() {
 					</div>
 				)}
 
-				<ul className='grid gap-6 landscape:[grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))] max-[1440px]:landscape:grid-cols-4'>
+				<ul className='grid gap-6 landscape:[grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))] max-[1440px]:landscape:grid-cols-4 max-[1440px]:gap-3'>
 					{CITIES.map((c) => {
 						const v = data[c.id];
 						const err = v instanceof Error ? v : null;
@@ -149,19 +149,19 @@ export default function App() {
 						return (
 							<li
 								key={c.id}
-								className='rounded-2xl border border-slate-200 bg-white p-4 shadow-sm'>
+								className='rounded-2xl border border-slate-200 bg-white p-4 shadow-sm max-[1440px]:p-2'>
 								<div className='flex items-start justify-between'>
 									<div>
-										<h2 className='text-lg md:text-xl xl:text-2xl font-semibold'>
+										<h2 className='text-lg md:text-xl xl:text-2xl font-semibold max-[1440px]:text-base'>
 											{c.name}
 										</h2>
-										<p className='text-xs md:text-sm xl:text-base text-slate-500'>
+										<p className='text-xs md:text-sm xl:text-base text-slate-500 max-[1440px]:text-[10px]'>
 											{w ? toLocalString(w.dt, w.timezone) : "--"}
 										</p>
 									</div>
 									{w && (
 										<img
-											className='-mr-2 -mt-2 h-16 w-16'
+											className='-mr-2 -mt-2 h-16 w-16 max-[1440px]:h-12 max-[1440px]:w-12'
 											src={iconUrl(w.weather[0].icon)}
 											alt={w.weather[0].description}
 											loading='lazy'
@@ -183,18 +183,18 @@ export default function App() {
 								{w && (
 									<div className='mt-4'>
 										<div className='flex items-baseline gap-2'>
-											<div className='text-4xl md:text-5xl xl:text-6xl font-bold leading-none'>
+											<div className='text-4xl md:text-5xl xl:text-6xl font-bold leading-none max-[1440px]:text-3xl'>
 												{Math.round(w.main.temp)}
-												<span className='ml-1 md:text-2xl xl:text-3xl text-xl font-medium'>
+												<span className='ml-1 md:text-2xl xl:text-3xl text-xl font-medium max-[1440px]:text-lg'>
 													{tempUnit}
 												</span>
 											</div>
-											<div className='text-sm md:text-base xl:text-lg text-slate-600'>
+											<div className='text-sm md:text-base xl:text-lg text-slate-600 max-[1440px]:text-xs'>
 												{w.weather[0].main}
 											</div>
 										</div>
 
-										<dl className='mt-3 grid grid-cols-2 gap-2 text-sm md:text-base'>
+										<dl className='mt-3 grid grid-cols-2 gap-2 text-sm md:text-base max-[1440px]:mt-2 max-[1440px]:gap-1 max-[1440px]:text-xs'>
 											<div className='rounded-xl bg-slate-50 p-2'>
 												<dt className='text-slate-500'>体感</dt>
 												<dd className='font-medium'>
